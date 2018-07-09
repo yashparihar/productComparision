@@ -1,0 +1,63 @@
+{
+  "totalProduct": "8",
+
+  "product": [
+    {
+      "name": "galaxy j1",
+      "price": "23k",
+      "camera": "25mp",
+      "company": "samsung",
+      "ram": "2gb"
+    },
+    {
+      "name": "Ios 7",
+      "price": "100000",
+      "camera": "25mp",
+      "company": "iphone",
+      "ram": "5gb"
+    },
+    {
+      "name": "Ios 2",
+      "price": "110000",
+      "camera": "20mp",
+      "company": "iphone",
+      "ram": "6gb"
+    },
+    {
+      "name": "meta 5",
+      "price": "100000",
+      "camera": "12mp",
+      "company": "sony",
+      "ram": "2gb"
+    },
+    {
+      "name": "meta 5",
+      "price": "100000",
+      "camera": "12mp",
+      "company": "sony",
+      "ram": "2gb"
+    },
+    {
+      "name": "galaxy a1",
+      "price": "22000",
+      "camera": "25mp",
+      "company": "samsung",
+      "ram": "2gb"
+    },
+    {
+      "name": "galaxy a2",
+      "price": "23000",
+      "camera": "25mp",
+      "company": "samsung",
+      "ram": "2gb"
+    },
+    {
+      "name": "galaxy a9",
+      "price": "23000",
+      "camera": "25mp",
+      "company": "samsung",
+      "ram": "2gb"
+    }
+
+  ]
+}

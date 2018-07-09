@@ -1,0 +1,44 @@
+{
+  "name": "question_anser",
+  "version": "1.0.0",
+  "description": "portal for question answer",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build",
+    "build:prod": "webpack --env prod",
+    "hh": "http-server",
+    "build": "webpack-dev-server --content-base src/ --public --port 8080 --inline --hot --history-api-fallback",
+    "dev": "webpack-dev-server --progress --colors --hot --content-base src/ --open --config ./webpack.config.js --inline --watch --host 192.168.3.154 --port 8080 --public --disableHostCheck",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "exam",
+    "portal"
+  ],
+  "author": "yash",
+  "license": "ISC",
+  "dependencies": {
+    "@types/redux-logger": "^3.0.6",
+    "babel-core": "^6.26.0",
+    "http-server": "^0.11.1",
+    "lodash": "^4.17.10",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-promise": "^2.0.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^5.1.1",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.11.0",
+    "react-router-dom": "^4.2.2",
+    "react-script": "^2.0.5",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
