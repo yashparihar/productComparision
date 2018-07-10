@@ -3,6 +3,7 @@
 
   "product": [
     {
+      "image":"nokia-7-plus-.jpg",
       "name": "galaxy j1",
       "price": "23k",
       "camera": "25mp",
@@ -10,6 +11,7 @@
       "ram": "2gb"
     },
     {
+      "image":"samsung-galaxy-j1-sm-j100h1.jpg",
       "name": "Ios 7",
       "price": "100000",
       "camera": "25mp",
@@ -17,6 +19,7 @@
       "ram": "5gb"
     },
     {
+      "image":"xiaomi-redmi-note-5-pro.jpg",
       "name": "Ios 2",
       "price": "110000",
       "camera": "20mp",
@@ -24,6 +27,7 @@
       "ram": "6gb"
     },
     {
+      "image":"xiaomi-redmi-note-5-pro.jpg",
       "name": "meta 5",
       "price": "100000",
       "camera": "12mp",
@@ -31,6 +35,7 @@
       "ram": "2gb"
     },
     {
+      "image":"nokia-7-plus-.jpg",
       "name": "meta 5",
       "price": "100000",
       "camera": "12mp",
@@ -38,6 +43,7 @@
       "ram": "2gb"
     },
     {
+      "image":"samsung-galaxy-j1-sm-j100h1.jpg",
       "name": "galaxy a1",
       "price": "22000",
       "camera": "25mp",
@@ -45,6 +51,7 @@
       "ram": "2gb"
     },
     {
+      "image":"nokia-7-plus-.jpg",
       "name": "galaxy a2",
       "price": "23000",
       "camera": "25mp",
@@ -52,6 +59,7 @@
       "ram": "2gb"
     },
     {
+      "image":"nokia-7-plus-.jpg",
       "name": "galaxy a9",
       "price": "23000",
       "camera": "25mp",

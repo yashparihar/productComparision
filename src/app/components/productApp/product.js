@@ -31,8 +31,8 @@ export class Product extends React.Component {
             ) :
             (
                 <div> 
-                    product
-                    <Productsearch/>
+                    {/* product
+                    <Productsearch/> */}
 
                     <Productlist
                         product={products}
