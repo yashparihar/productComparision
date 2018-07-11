@@ -1,70 +1,73 @@
 {
   "totalProduct": "8",
 
+  "productFeature":[
+    "Image", "Name" ,"Price","Camera","Company", "Ram"
+  ],
   "product": [
     {
-      "image":"nokia-7-plus-.jpg",
-      "name": "galaxy j1",
-      "price": "23k",
-      "camera": "25mp",
-      "company": "samsung",
-      "ram": "2gb"
+      "Image":"nokia-7-plus-.jpg",
+      "Name": "galaxy j1",
+      "Price": "23k",
+      "Camera": "25mp",
+      "Company": "samsung",
+      "Ram": "2gb"
     },
     {
-      "image":"samsung-galaxy-j1-sm-j100h1.jpg",
-      "name": "Ios 7",
-      "price": "100000",
-      "camera": "25mp",
-      "company": "iphone",
-      "ram": "5gb"
+      "Image":"samsung-galaxy-j1-sm-j100h1.jpg",
+      "Name": "Ios 7",
+      "Price": "100000",
+      "Camera": "25mp",
+      "Company": "iphone",
+      "Ram": "5gb"
     },
     {
-      "image":"xiaomi-redmi-note-5-pro.jpg",
-      "name": "Ios 2",
-      "price": "110000",
-      "camera": "20mp",
-      "company": "iphone",
-      "ram": "6gb"
+      "Image":"xiaomi-redmi-note-5-pro.jpg",
+      "Name": "Ios 2",
+      "Price": "110000",
+      "Camera": "20mp",
+      "Company": "iphone",
+      "Ram": "6gb"
     },
     {
-      "image":"xiaomi-redmi-note-5-pro.jpg",
-      "name": "meta 5",
-      "price": "100000",
-      "camera": "12mp",
-      "company": "sony",
-      "ram": "2gb"
+      "Image":"xiaomi-redmi-note-5-pro.jpg",
+      "Name": "meta 5",
+      "Price": "100000",
+      "Camera": "12mp",
+      "Company": "sony",
+      "Ram": "2gb"
     },
     {
-      "image":"nokia-7-plus-.jpg",
-      "name": "meta 5",
-      "price": "100000",
-      "camera": "12mp",
-      "company": "sony",
-      "ram": "2gb"
+      "Image":"nokia-7-plus-.jpg",
+      "Name": "meta 5",
+      "Price": "100000",
+      "Camera": "12mp",
+      "Company": "sony",
+      "Ram": "2gb"
     },
     {
-      "image":"samsung-galaxy-j1-sm-j100h1.jpg",
-      "name": "galaxy a1",
-      "price": "22000",
-      "camera": "25mp",
-      "company": "samsung",
-      "ram": "2gb"
+      "Image":"samsung-galaxy-j1-sm-j100h1.jpg",
+      "Name": "galaxy a1",
+      "Price": "22000",
+      "Camera": "25mp",
+      "Company": "samsung",
+      "Ram": "2gb"
     },
     {
-      "image":"nokia-7-plus-.jpg",
-      "name": "galaxy a2",
-      "price": "23000",
-      "camera": "25mp",
-      "company": "samsung",
-      "ram": "2gb"
+      "Image":"nokia-7-plus-.jpg",
+      "Name": "galaxy a2",
+      "Price": "23000",
+      "Camera": "25mp",
+      "Company": "samsung",
+      "Ram": "2gb"
     },
     {
-      "image":"nokia-7-plus-.jpg",
-      "name": "galaxy a9",
-      "price": "23000",
-      "camera": "25mp",
-      "company": "samsung",
-      "ram": "2gb"
+      "Image":"nokia-7-plus-.jpg",
+      "Name": "galaxy a9",
+      "Price": "23000",
+      "Camera": "25mp",
+      "Company": "samsung",
+      "Ram": "2gb"
     }
 
   ]

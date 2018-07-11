@@ -33,18 +33,19 @@ export class Productlist extends React.Component {
             )
         }
 
-        { console.log('in comp ', lComp.props.product);
-          console.log(' prod:- ', prod );
-           }
-  
+        {
+            console.log('in comp ', lComp.props.product);
+            console.log(' prod:- ', prod);
+        }
+
         return (
-           
-            <span>
-                <img src={"app/images/"+prod.prodDetails.image} />
-                {prod.prodDetails.name}
+
+            <div>
+                <img className="p-3" src={"app/images/" + prod.prodDetails.Image} />
+                {prod.prodDetails.Name}
                 {btn()}
 
-            </span>
+            </div>
         )
     }
 
@@ -56,59 +57,24 @@ export class Productlist extends React.Component {
         let allProduct = products.map((det, ind) => {
             console.log('details : ', det);
 
-            return (    
-                <div className="col-sm m-3 p-4 bg-white shadow">
+            return (
+                <div className="col-sm m-2 p-2 bg-white shadow">
 
-                    <this.productComponent key={ind} 
+                    <this.productComponent key={ind}
                         id={ind}
                         prodDetails={det}
-                        name={det.name}
-                    />  
-
+                        name={det.Name}
+                    />
                 </div>
             )
         })
 
         return (
-            <div>
-                product lists..
-                <div className="container">
-                 <div className="row">
-                     {allProduct}
-                  </div>
-                </div>
-
-                <div className="container">
+                // <div className="container">
                     <div className="row">
-                        <div className="col">
-                            attribute - banner
-                        </div> 
-                        <div className="col">
-                            dev 1
-                        </div> 
-                        <div className="col">
-                            dev 2
-                        </div> 
-                        <div className="col">
-                            dev 3
-                        </div> 
-
+                        {allProduct}
                     </div>
-
-                   
-
-
-                    {/* <div className="row">
-                        <div className="col-sm">
-                            C
-                        </div> 
-                        <div className="col-sm">
-                            D
-                        </div> 
-                    </div> */}
-                </div>    
-
-            </div>
+                // </div>
         )
     }
 

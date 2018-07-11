@@ -30,7 +30,7 @@ export class Product extends React.Component {
                 </div>    
             ) :
             (
-                <div> 
+                <div className="container">
                     {/* product
                     <Productsearch/> */}
 
