@@ -58,9 +58,9 @@ export class Productlist extends React.Component {
             console.log('details : ', det);
 
             return (
-                <div className="col-sm m-2 p-2 bg-white shadow">
+                <div key={ind} className="col-sm m-2 p-2 bg-white shadow">
 
-                    <this.productComponent key={ind}
+                    <this.productComponent 
                         id={ind}
                         prodDetails={det}
                         name={det.Name}

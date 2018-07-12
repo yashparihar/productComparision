@@ -10,7 +10,7 @@ import {Provider} from 'react-redux';
 //CONTAINERS: APP
 import App from './container/Appcontainer.js';
 
-
+import './style.css';
 
 store.subscribe(() => {
     console.log(store.getState());
@@ -23,6 +23,8 @@ render (
     window.document.getElementById('element') 
 );
 
+
+/*
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition( (pos) => {
         console.log('lcoation: ',pos );
@@ -58,3 +60,4 @@ options = {
 };
 
 id = navigator.geolocation.watchPosition(success, error, options);
+*/

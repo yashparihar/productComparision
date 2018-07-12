@@ -48,9 +48,38 @@ function compareClickDone(productSelectedArray){
     }
 }
 
+function productSelect(selectedInd , newProductId){
+    console.log('REDUCER prod select', selectedInd, newProductId);
+    return {
+        type:"PRODUCT_SELECT",
+        payload:{
+            productSelectedInd: selectedInd,
+            productId: newProductId
+        }
+    }
+
+}
+
+
+
+
+function productSwip(idA , idB){
+    
+    return {
+        type:"PRODUCT_SWIP",
+        payload:{
+            pA : idA,
+            pB : idB
+        }
+    }
+
+}
+
 
 export {
     loadProduct,
-    compareClick
+    compareClick,
+    productSelect,
+    productSwip
 }
 

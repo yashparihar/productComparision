@@ -1,0 +1,8 @@
+
+1. search
+  
+  -> search res -> link contains name,image and hover effect
+
+2. export csv
+
+3. drag mobile to other mobile spot
