@@ -1,5 +1,7 @@
 import React from "react";
 
+import { arrayToCsvConverter } from './../utility/helper.js'
+
 
 export class Summary extends React.Component {
 
@@ -14,11 +16,7 @@ export class Summary extends React.Component {
         }
     }
 
-    componentDidMount() {
-        console.log('[COMPONENT DID MOUNT ]');
-    }
-
-
+    // CHECKING SIMILIARITY BTW PRODUCT AS PER ATTRIBUTES
     checkSimiliarity(attribute, productList, productSelected) {
         let cnt = 0;
         let isSame = true;
@@ -68,14 +66,19 @@ export class Summary extends React.Component {
 
     dragStart(ev, ind) {
         ev.persist();
-        console.log('dragging ', ev.target);
+        // console.log('dragging ', ev.target);
         ev.dataTransfer.setData("draggedProductInd", ind);
         ev.dropEffect = "move";
     }
 
 
     draggingOver(ev) {
-        ev.target.style = { "color": "red" }
+        // ev.target.style.backgroundColor = 'green';
+        ev.target.style.border = "1px solid grey"
+
+        let t = ev.target.parentNode;
+        console.log(ev.target, ' == ', t);
+
         ev.preventDefault();
         // // Set the dropEffect to move
         // ev.dataTransfer.dropEffect = "move";
@@ -84,9 +87,25 @@ export class Summary extends React.Component {
     onDropping(ev, ind) {
         ev.preventDefault();
         // event.stopPropagation()
+
+        ev.target.style.removeProperty('border');
+
         let draggedProductInd = ev.dataTransfer.getData('draggedProductInd');
         //.. FIRE ACTION WHICH INTERCHANGE SERIAL ID IN SELECTED PRODUCT
-        this.props.productSwip(draggedProductInd, ind)
+        console.log(typeof(draggedProductInd) + ' and ' + typeof(ind)) ;
+
+        if (draggedProductInd === ind.toString()) {
+            console.log('dropping on same location');
+        } else {
+            this.props.productSwip(draggedProductInd, ind)
+        }
+    }
+
+
+    dragEnd(ev){
+        ev.preventDefault();
+        ev.target.style.removeProperty('border');
+        console.log('drag end -> ', ev.target );
     }
 
 
@@ -154,10 +173,14 @@ export class Summary extends React.Component {
         const features = this.props.product.productList.productFeature;
 
         let productCsvData = new Array(4);
+        productCsvData[0] = new Array(features.length);
+        productCsvData[1] = new Array(features.length);
+        productCsvData[2] = new Array(features.length);
+        productCsvData[3] = new Array(features.length);
+
 
         productCsvData[0] = [...features];
 
-        console.log('csvdetails ', productCsvData);
 
         // 1. FEATURE LIST..
         const featureList = features.map((attribute, ind) => {
@@ -187,104 +210,117 @@ export class Summary extends React.Component {
 
 
             // 1.2 DETAIL PART........
-            detailPart = productSelected.map((pid, ind) => {
+            detailPart = (rowno) => {
+                console.log('rn: ', rowno);
 
-                let searchTxtId = "search" + ind;
-                let searchResId = "searchRes" + ind;
-                // let imageId = "pImg" + ind
-
-                let result = null;
-                let currentComp = this;
-
-                if (this.state.searchRes !== null) {
-
-                    result = this.state.searchRes.map((resid, resind) => {
-                        console.log('res ', productList[resid]);
-                        let resClass = 'res';// + resind;
-
-                        // TO SHOW PRODUCT NAME, IMAGE AND HOVER EFFECT
-                        return (
-                            <li className="list-group-item " >
-
-                                <a className={resClass + ' row'}
-                                    title="click to view" data-toggle="popover" data-trigger="hover" data-content="Some content"
-                                    onClick={() => {
-                                        console.log('clicked ');
-                                        currentComp.props.productSelect(ind, resid);
-                                    }}>
-
-                                    <span className='col-'>
-                                        <img className='w-25' src={"app/images/" + productList[pid][attribute]}
-
-                                        />
-                                    </span>
-
-                                    <span className='col-'>
-                                        {productList[resid].Name}
-                                    </span>
-
-                                </a>
-                            </li>
-                        )
+                return productSelected.map((pid, selectPInd) => {
 
 
-                    })
-                }
+                    let searchTxtId = "search" + selectPInd;
+                    let searchResId = "searchRes" + selectPInd;
+                    // let imageId = "pImg" + selectPInd
 
-                // CSV DATA D-2............
-                productCsvData[ind] = new Array( features.length );
-                
+                    let result = null;
+                    let currentComp = this;
 
-                return (
+                    // CSV DATA D-2............
+                    productCsvData[selectPInd + 1][rowno] = productList[pid][attribute];
 
-                    (attribute == "Image") ?
-                        (
-                            <div className="col border-right" key={ind}>
+                    // productCsvData[selectPInd+1][ attribute ] = productList[pid][attribute] ; 
 
-                                {/* SEARCH BOX */}
-                                <input id={searchTxtId} type="text" className="form-control sm"
-                                    onChange={(event) => { this.searchChar(event, productList, productSelected) }} />
+                    // console.log('psd --> ', productCsvData[selectPInd]);
+
+                    if (this.state.searchRes !== null) {
+
+                        result = this.state.searchRes.map((resid, resind) => {
+                            console.log('res ', productList[resid]);
+                            let resClass = 'res';// + resind;
+
+                            // TO SHOW PRODUCT NAME, IMAGE AND HOVER EFFECT
+                            return (
+                                <li className="list-group-item " >
+
+                                    <a className={resClass + ' row'}
+                                        title="click to view" data-toggle="popover" data-trigger="hover" data-content="Some content"
+                                        onClick={() => {
+                                            console.log('clicked ');
+                                            currentComp.props.productSelect(selectPInd, resid);
+                                        }}>
+
+                                        <span className='col-'>
+                                            <img className='w-25' src={"app/images/" + productList[pid][attribute]}
+
+                                            />
+                                        </span>
+
+                                        <span className='col-'>
+                                            {productList[resid].Name}
+                                        </span>
+
+                                    </a>
+                                </li>
+                            )
 
 
-                                {/* SEARCH RESULT */}
-                                <ul id={searchResId} className="list-group position-fixed d-none" >
-                                    {result}
-                                    {/* <li className="list-group-item" >Morbi leo risus</li> */}
-                                </ul>
+                        })
+                    }
 
 
-                                {/* PRODUCT IMAGE - DRAGGABLE */}
-                                <img
-                                    draggable="true"
 
-                                    onDragStart={(ev) => this.dragStart(ev, ind)}
-                                    onDragOver={(ev) => this.draggingOver(ev)}
-                                    onDrop={(ev) => this.onDropping(ev, ind)}
 
-                                    src={"app/images/" + productList[pid][attribute]} />
-                            </div >
+                    return (
 
-                        )
-                        : (
-                            <div className="col border-right" key={ind}>
-                                {productCsvData[ind][0] = productList[pid][attribute]}
+                        (attribute == "Image") ?
+                            (
+                                <div className="col border-right" key={selectPInd}>
 
-                                {this.attributeList(
-                                    productList[pid][attribute],
-                                    isSame)}
-                            </div>
-                        )
-                )
-            })
+                                    {/* SEARCH BOX */}
+                                    <input id={searchTxtId} type="text" className="form-control sm"
+                                        onChange={(event) => { this.searchChar(event, productList, productSelected) }} />
+
+
+                                    {/* SEARCH RESULT */}
+                                    <ul id={searchResId} className="list-group position-fixed d-none" >
+                                        {result}
+                                        {/* <li className="list-group-item" >Morbi leo risus</li> */}
+                                    </ul>
+
+
+                                    {/* PRODUCT IMAGE - DRAGGABLE */}
+                                    <img
+                                        draggable="true"
+
+                                        onDragStart={(ev) => this.dragStart(ev, selectPInd)}
+                                        onDragOver={(ev) => this.draggingOver(ev)}
+                                        onDrop={(ev) => this.onDropping(ev, selectPInd)}
+                                        onDragEnd={(ev) => this.dragEnd(ev)}
+
+                                        src={"app/images/" + productList[pid][attribute]} />
+
+                                </div >
+
+                            )
+                            : (
+                                <div className="col border-right" key={selectPInd}>
+                                    {/* { productCsvData[selectPInd][0] = productList[pid][attribute] }  */}
+
+                                    {this.attributeList(
+                                        productList[pid][attribute],
+                                        isSame)}
+                                </div>
+                            )
+                    )
+                })
+            }
 
 
             return (
                 <div className="row border m-2 p-2 bg-white shadow" key={ind} >
 
                     {headPart}
-                    {detailPart}
+                    {detailPart(ind)}
 
-                    {console.log('pdetails >> ', productCsvData)}
+                    {/*console.log('pdetails >> ', productCsvData) */}
                 </div>
 
             )
@@ -294,7 +330,7 @@ export class Summary extends React.Component {
         //  WHEN USER CLICKES ANYWHERE IN THE PAGE
         let currentComp = this;
         document.addEventListener('click', (event) => {
-            // var isClickInside = true;//specifiedElement.contains(event.target);
+
             let eleClass = event.target.classList.value.split(' ');
             let searchRes = event.target.parentNode.parentNode;
 
@@ -310,35 +346,19 @@ export class Summary extends React.Component {
                 document.getElementById('searchRes0').classList.add('d-none');
                 document.getElementById('searchRes1').classList.add('d-none');
                 document.getElementById('searchRes2').classList.add('d-none');
+
                 // HIDE BLOCK WITH CLASS RES
             }
         });
 
 
-
-        // FOR CONVERTING INTO CSV DATA..
-
-        const rows = [["name1", "city1", "some other info"], ["name2", "city2", "more info"]];
-        let csvContent = "data:text/csv;charset=utf-8,";
-        rows.forEach(function (rowArray) {
-            let row = rowArray.join(",");
-            csvContent += row + "\r\n";
-        });
-
-        let encodedUri = encodeURI(csvContent);
-
         const csvDownload = (
-            <a href={encodedUri} download="my_data.csv" >
+            <a href={arrayToCsvConverter(productCsvData)} download="my_data.csv" >
                 Download csv
                 </a>
         )
 
-        // var link = document.createElement("a");
-        // link.setAttribute("href", encodedUri);
-        // link.setAttribute("download", "my_data.csv");
-        // link.innerHTML = "Click Here to download";
-        // document.body.appendChild(link); // Required for FF
-
+        console.log('---> ', productCsvData);
 
         return (
             <div>
@@ -348,27 +368,6 @@ export class Summary extends React.Component {
                 {/* <div id="ele1" draggable="true" onDragStart={() => {
                     console.log('draging ');
                 }}>  DRAG IT </div> */}
-
-
-
-                <div id="target" onDrop={(ev) => {
-                    ev.preventDefault();
-                    console.log('on drop ', ev.target)
-                    // Get the id of the target and add the moved element to the target's DOM
-                    var data = ev.dataTransfer.getData("le");
-
-                    // CUT THIS ELEMENT AND 
-                    ev.target.appendChild(document.getElementById(data));
-                }}
-                    onDragOver={(ev) => {
-                        ev.target.style = { "color": "red" }
-                        ev.preventDefault();
-                        console.log('dragging over ', ev.target);
-                        // Set the dropEffect to move
-                        ev.dataTransfer.dropEffect = "move";
-                    }}>
-
-                    Mango</div>
 
 
                 <div> {csvDownload}

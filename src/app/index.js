@@ -9,6 +9,7 @@ import {Provider} from 'react-redux';
 
 //CONTAINERS: APP
 import App from './container/Appcontainer.js';
+import DesignTemplate from './container/designTemplate.js';
 
 import './style.css';
 
@@ -22,6 +23,11 @@ render (
     </Provider>,
     window.document.getElementById('element') 
 );
+
+// render (
+//       <DesignTemplate/>,
+//   window.document.getElementById('element') 
+// );
 
 
 /*
