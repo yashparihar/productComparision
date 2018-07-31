@@ -41,7 +41,7 @@ export class Productlist extends React.Component {
         return (
 
             <div>
-                <img className="p-3" src={"app/images/" + prod.prodDetails.Image} />
+                <img className="img-fluid img-thumbnail p-2" src={"app/images/" + prod.prodDetails.Image} height="20%" />
                 {prod.prodDetails.Name}
                 {btn()}
 
@@ -58,11 +58,12 @@ export class Productlist extends React.Component {
             console.log('details : ', det);
 
             return (
-                <div key={ind} className="col-sm m-2 p-2 bg-white shadow">
+                <div key={ind} className="col-sm-auto col-md-4 col-lg-3 col-xl-5 col-xs-2 offset-md-2 offset-lg-4
+                        m-1 bg-white shadow">
 
                     <this.productComponent 
                         id={ind}
-                        prodDetails={det}
+                        prodDetails={det}   
                         name={det.Name}
                     />
                 </div>
@@ -71,7 +72,8 @@ export class Productlist extends React.Component {
 
         return (
                 // <div className="container">
-                    <div className="row">
+                //  justify-content-md-center
+                    <div className="row align-items-start">
                         {allProduct}
                     </div>
                 // </div>

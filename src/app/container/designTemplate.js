@@ -44,6 +44,8 @@ class DesignTemplate extends React.Component {
                     </div>
                 </nav>
 
+               <div className="container-fluid"> 
+
                 <div className="row m-3 ">
                     <div className="card sm-2 m-2">
                         <span> card element 1  </span>
@@ -53,7 +55,7 @@ class DesignTemplate extends React.Component {
                             <a href="#" className="btn btn-primary">Go somewhere</a>
                         </div>
 
-                        <div class="card-footer">
+                        <div className="card-footer">
                             2 days ago
                         </div>
                     </div>
@@ -96,6 +98,8 @@ class DesignTemplate extends React.Component {
                         <div className="card-header">
                             Featured
                      </div>
+
+
                         <div className="card-body">
                             <h5 className="card-title">card title</h5>
                             <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -105,7 +109,7 @@ class DesignTemplate extends React.Component {
 
                 </div>
 
-
+            </div>
 
                 {/* <div id="myGroup">
                     <button className="btn dropdown" data-toggle="collapse" data-target="#keys" data-parent="#myGroup"><i className="icon-chevron-right"></i> Keys  <span className="badge badge-info pull-right">X</span></button>
@@ -128,7 +132,7 @@ class DesignTemplate extends React.Component {
                 </div> */}
 
 
-            </div>
+            </div >
         )
     }
 }

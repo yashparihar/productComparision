@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3c7e76e-1108-4165-9fc6-cdb794418d60" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/action/productAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/action/productAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/summary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/summary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/container/Appcontainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/container/Appcontainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/productApp/productlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/productApp/productlist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/container/designTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/container/designTemplate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/database.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/database.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/reducer/productReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reducer/productReducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,6 +49,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -61,13 +63,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../project/eProcure/eProcure-Web" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RunDashboard">
@@ -163,15 +162,22 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
