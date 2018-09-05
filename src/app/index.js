@@ -17,12 +17,12 @@ store.subscribe(() => {
     console.log(store.getState());
 });
 
-render (
-    <Provider store={store}>
-        <App/>
-    </Provider>,
-    window.document.getElementById('element') 
-);
+ render (
+     <Provider store={store}>
+         <App/> 
+     </Provider>,
+     window.document.getElementById('element') 
+ );
 
 // render (
 //       <DesignTemplate/>,

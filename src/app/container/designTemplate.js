@@ -44,92 +44,94 @@ class DesignTemplate extends React.Component {
                     </div>
                 </nav>
 
-               <div className="container-fluid"> 
 
-                <div className="row m-3 ">
-                    <div className="card sm-2 m-2">
-                        <span> card element 1  </span>
-                        <div className="card-body">
-                            <h5 className="card-title">card title</h5>
-                            <p className="card-text">With sudditional content.</p>
-                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                        </div>
+                
+                {/* GRID VIEW  */}
+                <div className="container-fluid mt-5">
 
-                        <div className="card-footer">
-                            2 days ago
-                        </div>
+                    <div className="row r">
+                        <div className="col-12 col-sm-6 col-md-5 col-lg-8 c"> t1 </div>
+
+                        <div className="col-12 col-sm-8 col-md-7 col-lg-4 c"> t2 </div>
                     </div>
 
-                    <div className="card col-sm-4 m-2 myGroup">
+                    <div className="row r">
+                        <div className="c"> this is not marked as with classname col </div>
 
-                        <div className="card-header">
-
-                            <ul className="nav nav-tabs card-header-tabs ">
-                                <li className="nav-item">
-                                    <a className="nav-link active" data-toggle="collapse" href="#eleA" data-parent="#myGroup"
-                                        role="button" aria-expanded="false" >
-                                        Active</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" data-toggle="collapse" href="#eleB" data-parent="#myGroup"
-                                        role="button" aria-expanded="false" >
-                                        Link</a>
-                                </li>
-
-                            </ul>
-                        </div>
-
-                        <div className="card-body accordion-group">
-                            <h5 className="card-title">card title</h5>
-                            <div id="eleA" className="card-text collapse">
-                                This is content A </div>
-
-                            <div id="eleB" className="card-text collapse">
-                                B is the content </div>
-
-                        </div>
+                        {/* <div className="col-10 c"> t5 </div> */}
                     </div>
+                                               
+                </div>    
 
-                    {/* <div className="card col-3 m-1">
+
+
+                <div className="container-fluid">
+
+                    <div className="row m-3 ">
+                        <div className="card sm-2 m-2">
+                            <span> card element 1  </span>
+                            <div className="card-body">
+                                <h5 className="card-title">card title</h5>
+                                <p className="card-text">With sudditional content.</p>
+                                <a href="#" className="btn btn-primary">Go somewhere</a>
+                            </div>
+
+                            <div className="card-footer">
+                                2 days ago
+                        </div>
+                        </div>
+
+                        <div className="card col-sm-4 m-2 myGroup">
+
+                            <div className="card-header">
+
+                                <ul className="nav nav-tabs card-header-tabs ">
+                                    <li className="nav-item">
+                                        <a className="nav-link active" data-toggle="collapse" href="#eleA" data-parent="#myGroup"
+                                            role="button" aria-expanded="false" >
+                                            Active</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" data-toggle="collapse" href="#eleB" data-parent="#myGroup"
+                                            role="button" aria-expanded="false" >
+                                            Link</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div className="card-body accordion-group">
+                                <h5 className="card-title">card title</h5>
+                                <div id="eleA" className="card-text collapse">
+                                    This is content A </div>
+
+                                <div id="eleB" className="card-text collapse">
+                                    B is the content </div>
+
+                            </div>
+                        </div>
+
+                        {/* <div className="card col-3 m-1">
                         <span> card element 1  </span>
                     </div> */}
 
-                    <div className="card col-sm-3 ml-auto">
-                        <div className="card-header">
-                            Featured
+                        <div className="card col-sm-3 ml-auto">
+                            <div className="card-header">
+                                Featured
                      </div>
 
 
-                        <div className="card-body">
-                            <h5 className="card-title">card title</h5>
-                            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" className="btn btn-primary">Go somewhere</a>
+                            <div className="card-body">
+                                <h5 className="card-title">card title</h5>
+                                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" className="btn btn-primary">Go somewhere</a>
+                            </div>
                         </div>
+
                     </div>
 
                 </div>
 
-            </div>
-
-                {/* <div id="myGroup">
-                    <button className="btn dropdown" data-toggle="collapse" data-target="#keys" data-parent="#myGroup"><i className="icon-chevron-right"></i> Keys  <span className="badge badge-info pull-right">X</span></button>
-                    <button className="btn dropdown" data-toggle="collapse" data-target="#attrs" data-parent="#myGroup"><i className="icon-chevron-right"></i> Attributes</button>
-                    <button className="btn dropdown" data-toggle="collapse" data-target="#edit" data-parent="#myGroup"><i className="icon-chevron-right"></i> Edit Details</button>
-
-                    <div className="accordion-group">
-                        <div className="collapse indent" id="keys">
-                            keys
-        </div>
-
-                        <div className="collapse indent" id="attrs">
-                            attrs
-        </div>
-
-                        <div className="collapse" id="edit">
-                            edit
-        </div>
-                    </div>
-                </div> */}
 
 
             </div >
