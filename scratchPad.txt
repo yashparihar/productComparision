@@ -1,0 +1,18 @@
+
+1. search
+  
+  -> search res -> link contains name,image and hover effect
+  -> issue : sometimes some product is not searched
+  -> ALso have last visit product
+
+2. export csv (done) 
+    feasible for more records
+    design
+
+3. drag mobile to other mobile spot (done)
+
+..............
+improve design:-
+
+"react": "^15.2.1",
+"react-dom": "^15.2.1",

@@ -9,7 +9,9 @@ import React from 'react';
 //IMPORT ACTION
  import { 
           loadProduct,
-          compareClick 
+          compareClick ,
+          productSelect,
+          productSwip
         } 
  from '../action/productAction';
 
@@ -47,6 +49,8 @@ class App extends React.Component {
                         render={() => (
                             <Summary
                             product={this.props.product}
+                            productSelect = {this.props.productSelect}
+                            productSwip = {this.props.productSwip}
                             /> 
                     )} />
 
@@ -76,7 +80,13 @@ const mapDispatchToProps = (dispatch) => {
         },
         compareClick: (pid) => {
             dispatch(compareClick(pid));
-        }    
+        },
+        productSelect: (pSelectedInd , pId) => {
+            dispatch(productSelect(pSelectedInd , pId) )
+        },
+        productSwip: (idA , idB) => {
+            dispatch( productSwip(idA , idB) );
+        }
     };
 };
 
