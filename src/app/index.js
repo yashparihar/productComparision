@@ -9,9 +9,12 @@ import {Provider} from 'react-redux';
 
 //CONTAINERS: APP
 import App from './container/Appcontainer.js';
+import CanvasDesign from './container/canvasDesign.js';
 import DesignTemplate from './container/designTemplate.js';
 
 import './style.css';
+
+console.log("sfsdfsdfsd ");
 
 store.subscribe(() => {
     console.log(store.getState());
@@ -25,8 +28,8 @@ store.subscribe(() => {
  );
 
 // render (
-//       <DesignTemplate/>,
-//   window.document.getElementById('element') 
+      // <DesignTemplate/>,
+  // window.document.getElementById('element') 
 // );
 
 

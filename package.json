@@ -8,7 +8,7 @@
     "build:prod": "webpack --env prod",
     "hh": "http-server",
     "build": "webpack-dev-server --content-base src/ --public --port 8080 --inline --hot --history-api-fallback",
-    "dev": "webpack-dev-server --progress --colors --hot --content-base src/ --open --config ./webpack.config.js --inline --watch --host 192.168.3.154 --port 8080 --public --disableHostCheck",
+    "dev": "webpack-dev-server --progress --colors --hot --content-base src/ --open --config ./webpack.config.js --inline --watch --host 192.168.0.105 --port 8081 --public --disableHostCheck",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
